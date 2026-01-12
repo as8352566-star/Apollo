@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NutriFit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NutriFit 🔥</h1>
+  <p>Saúde, nutrição e acompanhamento inteligente</p>
+</header>
+
+<section class="card">
+  <h2>Calculadora de IMC</h2>
+  <input type="number" id="peso" placeholder="Peso (kg)">
+  <input type="number" id="altura" placeholder="Altura (m)">
+  <button onclick="calcularIMC()">Calcular</button>
+  <p id="resultado"></p>
+</section>
+
+<section class="card">
+  <h2>Conta & Streak 🔥</h2>
+  <button onclick="criarConta()">Criar Conta</button>
+  <p id="streak"></p>
+</section>
+
+<section class="card">
+  <h2>Enviar Foto (Avaliação de Saúde)</h2>
+  <input type="file" accept="image/*">
+  <p class="info">
+    A análise é focada em hábitos, postura e evolução.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Feedback Personalizado 🤖</h2>
+  <button onclick="gerarFeedback()">Gerar Feedback</button>
+  <p id="feedback"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
