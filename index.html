@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Apollo</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,61 +12,43 @@
   <p>Acompanhe sua evolução física</p>
 </header>
 
-<div class="premium">
-  👑 <strong>Premium Ativo</strong>
-  <span>Acesso completo aos recursos</span>
-</div>
+<section class="premium">
+  ⭐ Premium Ativo — Acesso ilimitado
+</section>
 
-<main class="grid">
+<div class="container">
 
-  <!-- IMC -->
-  <section class="card green">
+  <div class="card imc">
     <h2>⚖️ Calculadora de IMC</h2>
 
-    <div class="inputs">
-      <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
-      <input type="number" id="peso" placeholder="Peso (kg)">
-      <input type="number" id="idade" placeholder="Idade">
-    </div>
+    <input id="altura" type="number" step="0.01" placeholder="Altura (m)">
+    <input id="peso" type="number" placeholder="Peso (kg)">
+    <input id="idade" type="number" placeholder="Idade">
 
     <button onclick="calcularIMC()">Calcular IMC</button>
 
-    <div class="resultado">
-      <h3 id="imcValor">—</h3>
-      <p id="imcTexto"></p>
-    </div>
-  </section>
+    <h3 id="resultado">—</h3>
+    <p id="classificacao"></p>
+  </div>
 
-  <!-- EVOLUÇÃO -->
-  <section class="card orange">
+  <div class="card evolucao">
     <h2>🔥 Sua Evolução</h2>
 
-    <div class="streak">
-      <div class="circle">🔥<br><span id="dias">1</span><small>dias</small></div>
+    <div class="fire">
+      <span id="dias">1</span>
+      <small>dias</small>
     </div>
 
-    <div class="infos">
-      <div>
-        <strong id="totalDias">1</strong>
-        <span>Dias totais</span>
-      </div>
-      <div>
-        <strong id="inicio">Hoje</strong>
-        <span>Início</span>
-      </div>
-    </div>
+    <button onclick="checkin()">Check-in diário</button>
+  </div>
 
-    <button onclick="checkin()">Check-in de hoje</button>
-  </section>
+</div>
 
-</main>
-
-<!-- FEEDBACK -->
-<section class="feedback">
+<div class="card feedback">
   <h2>📊 Feedback Personalizado</h2>
   <button onclick="gerarFeedback()">Gerar Feedback</button>
   <div id="textoFeedback"></div>
-</section>
+</div>
 
 <script src="script.js"></script>
 </body>
