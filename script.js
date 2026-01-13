@@ -1,31 +1,49 @@
+let dias = 1;
+
 function calcularIMC() {
-  const peso = document.getElementById("peso").value;
-  const altura = document.getElementById("altura").value;
+  const peso = Number(pesoInput.value);
+  const altura = Number(alturaInput.value);
+
+  if (!peso || !altura) return;
+
   const imc = peso / (altura * altura);
+  let texto = "";
 
-  let classificacao = "";
+  if (imc < 18.5) texto = "Abaixo do peso — foco em nutrição equilibrada.";
+  else if (imc < 25) texto = "Peso saudável — continue com bons hábitos 👍";
+  else if (imc < 30) texto = "Sobrepeso — pequenos ajustes já ajudam.";
+  else texto = "IMC elevado — acompanhamento saudável é importante.";
 
-  if (imc < 18.5) classificacao = "Abaixo do peso";
-  else if (imc < 25) classificacao = "Peso saudável";
-  else if (imc < 30) classificacao = "Sobrepeso";
-  else classificacao = "Atenção ao controle de hábitos";
-
-  document.getElementById("resultado").innerText = imc.toFixed(2);
-  document.getElementById("classificacao").innerText = classificacao;
+  document.getElementById("imcValor").innerText = imc.toFixed(1);
+  document.getElementById("imcTexto").innerText = texto;
 }
 
 function checkin() {
-  let dias = localStorage.getItem("dias") || 0;
   dias++;
-  localStorage.setItem("dias", dias);
   document.getElementById("dias").innerText = dias;
+  document.getElementById("totalDias").innerText = dias;
 }
 
 function gerarFeedback() {
   document.getElementById("textoFeedback").innerHTML = `
-  <p><strong>Análise geral:</strong> Você demonstra consistência, o que é um fator essencial para evolução física.</p>
-  <p><strong>Pontos fortes:</strong> Boa regularidade e consciência corporal.</p>
-  <p><strong>Pontos de melhoria:</strong> Manter atenção ao descanso, hidratação e progressão gradual.</p>
-  <p><strong>Recomendação:</strong> Continue focado em hábitos saudáveis e evolução contínua.</p>
+  <h3>1. Análise Geral</h3>
+  <p>Com base nos dados informados, você demonstra preocupação com sua saúde e constância, o que é um ponto muito positivo.</p>
+
+  <h3>2. Pontos Fortes</h3>
+  <ul>
+    <li>Boa consistência no acompanhamento</li>
+    <li>Rotina organizada</li>
+    <li>Consciência corporal</li>
+  </ul>
+
+  <h3>3. Pontos de Melhoria</h3>
+  <ul>
+    <li>Manter regularidade de sono</li>
+    <li>Equilibrar alimentação ao longo do dia</li>
+    <li>Evitar longos períodos sem atividade</li>
+  </ul>
+
+  <h3>4. Recomendações</h3>
+  <p>Continue focando em progresso gradual. Pequenas melhorias diárias trazem grandes resultados ao longo do tempo.</p>
   `;
 }
