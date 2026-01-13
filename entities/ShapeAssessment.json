@@ -1,0 +1,40 @@
+{
+  "name": "ShapeAssessment",
+  "type": "object",
+  "properties": {
+    "front_photo_url": {
+      "type": "string",
+      "description": "Foto frontal"
+    },
+    "side_photo_url": {
+      "type": "string",
+      "description": "Foto lateral"
+    },
+    "back_photo_url": {
+      "type": "string",
+      "description": "Foto de costas"
+    },
+    "ai_analysis": {
+      "type": "string",
+      "description": "Análise completa da IA"
+    },
+    "assessment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data da avaliação"
+    },
+    "muscle_mass_score": {
+      "type": "number",
+      "description": "Score de massa muscular (0-100)"
+    },
+    "body_fat_estimate": {
+      "type": "string",
+      "description": "Estimativa de gordura corporal"
+    },
+    "recommendations": {
+      "type": "string",
+      "description": "Recomendações da IA"
+    }
+  },
+  "required": ["front_photo_url", "side_photo_url", "back_photo_url"]
+}
