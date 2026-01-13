@@ -1,7 +1,8 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f6f8;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
 }
 
 .top {
@@ -10,62 +11,98 @@ body {
 }
 
 .premium {
-  background: linear-gradient(90deg, #ff9800, #ffc107);
+  background: linear-gradient(90deg,#f7b500,#ff9800);
   color: #fff;
   padding: 15px;
-  margin: 0 40px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
+  margin: 0 20px;
+  border-radius: 12px;
 }
 
-.container {
-  display: flex;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .card {
   background: #fff;
   border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  flex: 1;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
 }
 
-.imc h2 { color: #10b981; }
-.evolucao h2 { color: #fb923c; }
+.green h2 { color: #0bb07b; }
+.orange h2 { color: #ff8c00; }
 
-input, button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+.inputs {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
   border-radius: 8px;
   border: 1px solid #ddd;
 }
 
 button {
-  background: #10b981;
-  color: white;
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
   border: none;
+  border-radius: 10px;
+  background: #0bb07b;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
 }
 
-.fire {
+.orange button {
+  background: #ff8c00;
+}
+
+.resultado {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resultado h3 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.streak {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
   width: 120px;
   height: 120px;
-  background: orange;
+  background: #ff9800;
+  color: #fff;
   border-radius: 50%;
-  margin: 20px auto;
-  color: white;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 26px;
+}
+
+.circle small {
+  display: block;
+  font-size: 14px;
+}
+
+.infos {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 .feedback {
-  margin: 0 40px 40px;
+  background: #fff;
+  margin: 20px;
+  padding: 25px;
+  border-radius: 15px;
 }
