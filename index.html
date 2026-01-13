@@ -2,43 +2,53 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>NutriFit</title>
+  <title>Apollo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>NutriFit 🔥</h1>
-  <p>Saúde, nutrição e acompanhamento inteligente</p>
+<header class="top">
+  <h1>Apollo</h1>
+  <p>Acompanhe sua evolução física</p>
 </header>
 
-<section class="card">
-  <h2>Calculadora de IMC</h2>
-  <input type="number" id="peso" placeholder="Peso (kg)">
-  <input type="number" id="altura" placeholder="Altura (m)">
-  <button onclick="calcularIMC()">Calcular</button>
-  <p id="resultado"></p>
+<section class="premium">
+  ⭐ Premium Ativo — Acesso ilimitado
 </section>
 
-<section class="card">
-  <h2>Conta & Streak 🔥</h2>
-  <button onclick="criarConta()">Criar Conta</button>
-  <p id="streak"></p>
-</section>
+<div class="container">
 
-<section class="card">
-  <h2>Enviar Foto (Avaliação de Saúde)</h2>
-  <input type="file" accept="image/*">
-  <p class="info">
-    A análise é focada em hábitos, postura e evolução.
-  </p>
-</section>
+  <div class="card imc">
+    <h2>⚖️ Calculadora de IMC</h2>
 
-<section class="card">
-  <h2>Feedback Personalizado 🤖</h2>
+    <input id="altura" type="number" step="0.01" placeholder="Altura (m)">
+    <input id="peso" type="number" placeholder="Peso (kg)">
+    <input id="idade" type="number" placeholder="Idade">
+
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <h3 id="resultado">—</h3>
+    <p id="classificacao"></p>
+  </div>
+
+  <div class="card evolucao">
+    <h2>🔥 Sua Evolução</h2>
+
+    <div class="fire">
+      <span id="dias">1</span>
+      <small>dias</small>
+    </div>
+
+    <button onclick="checkin()">Check-in diário</button>
+  </div>
+
+</div>
+
+<div class="card feedback">
+  <h2>📊 Feedback Personalizado</h2>
   <button onclick="gerarFeedback()">Gerar Feedback</button>
-  <p id="feedback"></p>
-</section>
+  <div id="textoFeedback"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
