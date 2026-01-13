@@ -1,0 +1,32 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "weight": {
+      "type": "number",
+      "description": "Peso em kg"
+    },
+    "height": {
+      "type": "number",
+      "description": "Altura em cm"
+    },
+    "age": {
+      "type": "number",
+      "description": "Idade em anos"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de início da jornada"
+    },
+    "bmi": {
+      "type": "number",
+      "description": "IMC calculado"
+    },
+    "bmi_category": {
+      "type": "string",
+      "description": "Categoria do IMC"
+    }
+  },
+  "required": ["weight", "height", "age"]
+}
